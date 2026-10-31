@@ -18,12 +18,26 @@ namespace RestaurantApp
                 new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
                 new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
             };
+            
 
             foreach (var item in restaurants)
             {
                 Console.WriteLine($"{item.Name} Type:{item.Type} -- {item.Rate}");
             }
+           
+            
+            double averageRate = restaurants.Average(item => item.Rate);
+            Console.WriteLine($"Average rating: {averageRate:F2}");
+
+
+
+
+            Console.WriteLine("Akkharaphon Panyalam");
+            Console.WriteLine("Sakkarin Kanya");
+            Console.WriteLine("Paksatorn Tayong");
+
         }
+
     }
     public class Restaurant
     {
