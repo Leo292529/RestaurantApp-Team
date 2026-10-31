@@ -33,7 +33,13 @@ namespace RestaurantApp
 
 
             Console.WriteLine("Akkharaphon Panyalam");
-            Console.WriteLine("Sakkarin Kanya");
+            Console.WriteLine("Sakkarin Kanyarrrrrr");
+            Console.WriteLine("Paksatorn Tayong");
+            Console.WriteLine("Akkharaphon Panyalam");
+            Console.WriteLine("Sakkarin Kanyarrrrrr");
+            Console.WriteLine("Paksatorn Tayong");
+            Console.WriteLine("Akkharaphon Panyalam");
+            Console.WriteLine("Sakkarin Kanyarrrrrr");
             Console.WriteLine("Paksatorn Tayong");
 
         }
