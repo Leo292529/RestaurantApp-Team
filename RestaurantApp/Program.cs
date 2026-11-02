@@ -16,7 +16,9 @@ namespace RestaurantApp
             {
                 new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
                 new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
-                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
+                new Restaurant(3, "papaya salad", "Thai food", 4.7),
+                new Restaurant(4, "Lad Yso", "Thai food", 5.0),
+                new Restaurant(5, "Phad thi", "Thai food", 4.9)
 
             };
             
@@ -29,10 +31,36 @@ namespace RestaurantApp
             
             double averageRate = restaurants.Average(item => item.Rate);
             Console.WriteLine($"Average rating: {averageRate:F2}");
-
-
-
-
+            
+            Console.WriteLine("\n=== Add New Restaurant ===");
+            Console.Write("Enter restaurant name: ");
+            string name = Console.ReadLine() ?? "";
+            Console.Write("Enter restaurant type: ");
+            string type = Console.ReadLine() ?? "";
+            Console.Write("Enter restaurant rating: ");
+            if (double.TryParse(Console.ReadLine(), out double rate)
+                && rate >= 0 && rate <= 5
+                && !string.IsNullOrWhiteSpace(name)
+                && !string.IsNullOrWhiteSpace(type))
+            {
+                int newId = restaurants.Count + 1;
+                restaurants.Add(
+                    new Restaurant(newId, name, type, rate)
+                );
+                Console.WriteLine("Add restaurant successfully!");
+                Console.WriteLine("\n=== Updated Restaurant List ===");
+                foreach (var item in restaurants)
+                {
+                    Console.WriteLine(
+                        $"{item.Name} Type:{item.Type} -- {item.Rate}"
+                    );
+                }
+                Console.WriteLine($"Total restaurants: {restaurants.Count}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid restaurant information!");
+            }
 
         }
 
