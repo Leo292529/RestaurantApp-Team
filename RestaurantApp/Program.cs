@@ -17,6 +17,7 @@ namespace RestaurantApp
                 new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
                 new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
                 new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
+
             };
             
 
@@ -24,7 +25,7 @@ namespace RestaurantApp
             {
                 Console.WriteLine($"{item.Name} Type:{item.Type} -- {item.Rate}");
             }
-           
+            Console.WriteLine($"Total restaurants: {restaurants.Count}");
             
             double averageRate = restaurants.Average(item => item.Rate);
             Console.WriteLine($"Average rating: {averageRate:F2}");
@@ -32,15 +33,6 @@ namespace RestaurantApp
 
 
 
-            Console.WriteLine("Akkharaphon Panyalam");
-            Console.WriteLine("Sakkarin Kanyarrrrrr");
-            Console.WriteLine("Paksatorn Tayong");
-            Console.WriteLine("Akkharaphon Panyalam");
-            Console.WriteLine("Sakkarin Kanyarrrrrr");
-            Console.WriteLine("Paksatorn Tayong");
-            Console.WriteLine("Akkharaphon Panyalam");
-            Console.WriteLine("Sakkarin Kanyarrrrrr");
-            Console.WriteLine("Paksatorn Tayong");
 
         }
 
