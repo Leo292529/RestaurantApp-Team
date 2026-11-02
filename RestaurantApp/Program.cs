@@ -62,7 +62,6 @@ namespace RestaurantApp
                 Console.WriteLine("Invalid restaurant information!");
             }
 
-        }
 
     }
     public class Restaurant
