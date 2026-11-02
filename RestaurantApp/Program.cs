@@ -21,17 +21,17 @@ namespace RestaurantApp
                 new Restaurant(5, "Phad thi", "Thai food", 4.9)
 
             };
-             
+
 
             foreach (var item in restaurants)
             {
                 Console.WriteLine($"{item.Name} Type:{item.Type} -- {item.Rate}");
             }
             Console.WriteLine($"Total restaurants: {restaurants.Count}");
-            
+
             double averageRate = restaurants.Average(item => item.Rate);
             Console.WriteLine($"Average rating: {averageRate:F2}");
-            
+
             Console.WriteLine("\n=== Add New Restaurant ===");
             Console.Write("Enter restaurant name: ");
             string name = Console.ReadLine() ?? "";
@@ -63,20 +63,48 @@ namespace RestaurantApp
             }
 
 
-    }
-    public class Restaurant
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type {  get; set; }
-        public double Rate {  get; set; }
 
-        public Restaurant(int id,string name,string type,double rate)
+        }
+
+        // B: แสดงร้านอาหารที่มีคะแนน 4.5 ขึ้นไป
+        static void DisplayGoodRating(List<Restaurant> restaurants)
         {
-            this.Id = id;
-            this.Name = name;
-            this.Type = type;
-            this.Rate = rate;
+            Console.WriteLine("\n=== Restaurants Rating 4.5 Up ===");
+
+            var goodRestaurants = restaurants
+                .Where(item => item.Rate >= 4.5)
+                .ToList();
+
+            if (goodRestaurants.Count == 0)
+            {
+                Console.WriteLine("No restaurant found!");
+                return;
+            }
+
+            foreach (var item in goodRestaurants)
+            {
+                Console.WriteLine(
+                    $"{item.Name} Type:{item.Type} -- {item.Rate}");
+            }
+
+            Console.WriteLine($"Total good restaurants: {goodRestaurants.Count}");
+        }
+
+    }
+
+    public class Restaurant
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Type { get; set; }
+            public double Rate { get; set; }
+
+            public Restaurant(int id, string name, string type, double rate)
+            {
+                this.Id = id;
+                this.Name = name;
+                this.Type = type;
+                this.Rate = rate;
+            }
         }
     }
-}
